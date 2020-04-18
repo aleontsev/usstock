@@ -20,6 +20,9 @@ interface TickerDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(ticker: TickerEntity)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAllTickers(tickerRoomList : List<TickerEntity>);
+
     @Query("DELETE FROM ticker_table")
     suspend fun deleteAll()
 }

@@ -7,7 +7,8 @@ import java.util.*
 
 @Entity(tableName = "ticker_table")
 data class TickerEntity(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey (autoGenerate = true)
+    val uid: Int,
     val ticker: String,
     val time: String,
     val last_price: Double,

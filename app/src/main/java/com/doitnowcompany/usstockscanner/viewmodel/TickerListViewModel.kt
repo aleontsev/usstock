@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.doitnowcompany.usstockscanner.TickerRepository
 import com.doitnowcompany.usstockscanner.db.AppDatabase
 import com.doitnowcompany.usstockscanner.db.entity.TickerEntity
+import com.doitnowcompany.usstockscanner.network.IEXApi
 import kotlinx.coroutines.launch
 
 class TickerListViewModel (application: Application) : AndroidViewModel(application) {
@@ -20,13 +21,18 @@ class TickerListViewModel (application: Application) : AndroidViewModel(applicat
         // Getting reference to the TickerDao from AppDatabase to construct
         // the correct TickerRepository
         val tickerDao = AppDatabase.getDatabase(application, viewModelScope).tickerDao()
-        repository = TickerRepository(tickerDao)
+        repository = TickerRepository(IEXApi.retrofitService, tickerDao)
         allTickers = repository.allTickers
     }
 
     //using viewModelScope to run operations using coroutines
     fun insert(ticker: TickerEntity) = viewModelScope.launch {
         repository.insert(ticker)
+    }
+
+    //refreshing tickers from network
+    fun refreshTickers() = viewModelScope.launch {
+        repository.refreshTickers()
     }
 
 }

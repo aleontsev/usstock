@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 
-@Database(entities = [TickerEntity::class], version = 1, exportSchema = false)
+@Database(entities = [TickerEntity::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun tickerDao(): TickerDao
@@ -40,6 +40,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "ticker_database"
                 )
                     .addCallback(AppDatabaseCallback(scope))
+                    .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
                 // return instance
@@ -75,13 +76,10 @@ abstract class AppDatabase : RoomDatabase() {
             // Not needed if you only populate on creation.
             tickerDao.deleteAll()
 
-            var ticker = TickerEntity(1, "TSLA", "2020-02-08", 0.70,
-                32423, 12.12, 1.21)
-            tickerDao.insert(ticker)
+//            var ticker = TickerEntity(1, "TSLA", "2020-02-08", 0.70,
+//                32423, 12.12, 1.21)
+//            tickerDao.insert(ticker)
 
-            ticker = TickerEntity(2, "UUU", "2020-02-07", 1.25,
-                654654634, 30.12, 0.43)
-            tickerDao.insert(ticker)
         }
     }
 

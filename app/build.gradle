@@ -58,6 +58,8 @@ dependencies {
 
     // Coroutines
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$rootProject.retrofit_coroutines_adapter"
 
     // UI
     implementation "com.google.android.material:material:$rootProject.materialVersion"
@@ -65,7 +67,15 @@ dependencies {
     // Testing
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
 
+    // Core with Ktx
+    implementation "androidx.core:core-ktx:$rootProject.version_core"
+
     // Retrofit
-    implementation "com.squareup.retrofit2:retrofit: $version_retrofit"
-    implementation "com.squareup.retrofit2:converter-scalars:$version_retrofit"
+    implementation "com.squareup.moshi:moshi:$rootProject.version_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$rootProject.version_moshi"
+
+    implementation "com.squareup.retrofit2:retrofit: $rootProject.version_retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$rootProject.version_retrofit"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycle_livedata"
+
 }
