@@ -8,11 +8,11 @@ data class TickerData(
     @Json(name = "latestPrice")
     val time: String = "01",
     @Json(name = "latestUpdate")
-    val last_price: Double = 1.00,
+    val last_price: Double? = 1.00,
     @Json(name = "volume")
     val volume: Int? = 100,
     @Json(name = "change")
-    val net_change: Double = 1.00,
+    val net_change: Double? = 1.00,
     @Json(name = "changePercent")
-    val change: Double  = 0.1
+    val change: Double?  = 0.1
 )

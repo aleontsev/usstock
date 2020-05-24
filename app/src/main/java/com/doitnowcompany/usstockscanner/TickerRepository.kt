@@ -1,4 +1,4 @@
-package com.doitnowcompany.usstockscanner
+package com.doitnowcompany.usstockscanner     
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
@@ -25,8 +25,7 @@ class TickerRepository(private val network: IEXApiService, private val tickerDao
                 //deleting all tickers before updating
                 tickerDao.deleteAll()
                 for(s in resultResponse) {
-                    //TODO make constructor for ticker entity using TickerData class
-                    val newTickerEntity = TickerEntity(0, s.ticker, s.time, s.last_price, s.volume?:0, s.net_change, s.change)
+                    val newTickerEntity = TickerEntity(s)
                     tickerDao.insert(newTickerEntity)
                 }
             }
