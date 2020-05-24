@@ -8,6 +8,9 @@ import com.doitnowcompany.usstockscanner.TickerRepository
 import com.doitnowcompany.usstockscanner.db.AppDatabase
 import com.doitnowcompany.usstockscanner.db.entity.TickerEntity
 import com.doitnowcompany.usstockscanner.network.IEXApi
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class TickerListViewModel (application: Application) : AndroidViewModel(application) {
@@ -34,5 +37,6 @@ class TickerListViewModel (application: Application) : AndroidViewModel(applicat
     fun refreshTickers() = viewModelScope.launch {
         repository.refreshTickers()
     }
+
 
 }
