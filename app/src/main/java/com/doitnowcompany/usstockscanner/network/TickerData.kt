@@ -5,9 +5,9 @@ import com.squareup.moshi.Json
 data class TickerData(
     @Json(name = "symbol")
     val ticker: String = "TSLA",
-    @Json(name = "latestPrice")
-    val time: String = "01",
     @Json(name = "latestUpdate")
+    val time: String = "01",
+    @Json(name = "latestPrice")
     val last_price: Double? = 1.00,
     @Json(name = "volume")
     val volume: Int? = 100,

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">usstockscanner</string>
     <string name="scan_button">Scan</string>
+    <string name="ticker_title">Ticker</string>
+    <string name="text_header_ticker">Ticker</string>
+    <string name="text_header_price">Price</string>
+    <string name="text_header_change">%Change</string>
+    <string name="text_header_volume">Volume</string>
 </resources>
