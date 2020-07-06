@@ -8,19 +8,23 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.doitnowcompany.usstockscanner.R
+import com.doitnowcompany.usstockscanner.databinding.ActivityMainBinding
 import com.doitnowcompany.usstockscanner.viewmodel.TickerListViewModel
 import kotlinx.coroutines.channels.ticker
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var tickerViewModel: TickerListViewModel
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(view)
 
-        val scan = findViewById<Button>(R.id.scan)
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        val scan = binding.scan
+        val recyclerView = binding.recyclerview
         val adapter = TickerListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)

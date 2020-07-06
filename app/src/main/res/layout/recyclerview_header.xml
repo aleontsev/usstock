@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/ticker"
+        style="@style/ticker_title"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/text_header_ticker"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/ticker_title"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/text_header_price"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/change"
+        style="@style/ticker_title"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/text_header_change"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/volume"
+        style="@style/ticker_title"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/text_header_volume"
+        android:textAlignment="viewStart" />
+</LinearLayout>

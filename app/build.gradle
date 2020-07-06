@@ -24,11 +24,16 @@ android {
         }
     }
 
+    viewBinding {
+        enabled = true
+    }
+
     // other configuration (buildTypes, defaultConfig, etc.)
 
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
+
 
 }
 

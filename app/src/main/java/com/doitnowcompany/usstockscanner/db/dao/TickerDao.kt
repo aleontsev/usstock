@@ -14,7 +14,7 @@ interface TickerDao {
     // Always holds/caches latest version of data. Notifies its active observers when the
     // data has changed. Since we are getting all the contents of the database,
     // we are notified whenever any of the database contents have changed.
-    @Query("SELECT * from ticker_table ORDER BY change ASC")
+    @Query("SELECT * from ticker_table ORDER BY change DESC")
     fun getAlphabetizedTickers(): LiveData<List<TickerEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
