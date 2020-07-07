@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:showDividers="middle"
+    app:divider="@drawable/vertical_divider_itemlist"
     android:orientation="horizontal">
 
     <TextView
@@ -9,7 +13,7 @@
         style="@style/ticker_title"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/darker_gray"
         android:text="@string/text_header_ticker"
         android:textAlignment="viewStart" />
 
@@ -18,7 +22,7 @@
         style="@style/ticker_title"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/darker_gray"
         android:text="@string/text_header_price"
         android:textAlignment="viewStart" />
 
@@ -27,7 +31,7 @@
         style="@style/ticker_title"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/darker_gray"
         android:text="@string/text_header_change"
         android:textAlignment="viewStart" />
 
@@ -36,7 +40,7 @@
         style="@style/ticker_title"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/darker_gray"
         android:text="@string/text_header_volume"
         android:textAlignment="viewStart" />
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

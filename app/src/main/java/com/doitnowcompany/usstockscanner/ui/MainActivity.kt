@@ -1,13 +1,18 @@
 package com.doitnowcompany.usstockscanner.ui
 
+import android.annotation.SuppressLint
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.doitnowcompany.usstockscanner.R
 import com.doitnowcompany.usstockscanner.databinding.ActivityMainBinding
 import com.doitnowcompany.usstockscanner.viewmodel.TickerListViewModel
+import java.security.AccessController.getContext
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +35,13 @@ class MainActivity : AppCompatActivity() {
             recyclerView.context,
             LinearLayoutManager(this).orientation
         )
+        ContextCompat.getDrawable(this, R.drawable.vertical_divider_itemlist)?.let {
+            mDividerItemDecoration.setDrawable(
+                it
+            )
+        };
+
+
         recyclerView.addItemDecoration(mDividerItemDecoration)
 
 
