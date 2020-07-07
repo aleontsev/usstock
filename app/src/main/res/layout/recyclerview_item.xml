@@ -4,6 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:showDividers="middle"
+    app:divider="@drawable/vertical_divider_itemlist"
     android:orientation="horizontal"
     android:textAlignment="textStart">
 
@@ -12,7 +14,7 @@
         style="@style/ticker_title"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_green_light"
+        android:background = "@color/colorHeader"
         android:gravity="start"/>
 
     <TextView
