@@ -1,16 +1,14 @@
 package com.doitnowcompany.usstockscanner.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.doitnowcompany.usstockscanner.R
 import com.doitnowcompany.usstockscanner.databinding.ActivityMainBinding
 import com.doitnowcompany.usstockscanner.viewmodel.TickerListViewModel
-import kotlinx.coroutines.channels.ticker
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         val adapter = TickerListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+        val mDividerItemDecoration = DividerItemDecoration(
+            recyclerView.context,
+            LinearLayoutManager(this).orientation
+        )
+        recyclerView.addItemDecoration(mDividerItemDecoration)
+
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         tickerViewModel = ViewModelProvider(this).get(TickerListViewModel::class.java)
