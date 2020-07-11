@@ -1,43 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:showDividers="middle"
-    app:divider="@drawable/vertical_divider_itemlist"
-    android:orientation="horizontal"
-    android:textAlignment="textStart">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/text_ticker"
-        style="@style/ticker_title"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:background = "@color/colorHeader"
-        android:gravity="start"/>
+    <data>
+        <variable
+            name="ticker"
+            type="com.doitnowcompany.usstockscanner.db.entity.TickerEntity" />
 
-    <TextView
-        android:id="@+id/text_price"
-        style="@style/ticker_title"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:background="@android:color/holo_green_light"
-        android:gravity="start"/>
+    </data>
 
-    <TextView
-        android:id="@+id/text_change"
-        style="@style/ticker_title"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:background="@android:color/holo_green_light"
-        android:gravity="start"/>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:showDividers="middle"
+        app:divider="@drawable/vertical_divider_itemlist"
+        android:orientation="horizontal"
+        android:textAlignment="textStart">
 
-    <TextView
-        android:id="@+id/text_volume"
-        style="@style/ticker_title"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:background="@android:color/holo_green_light"
-        android:gravity="start" />
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/text_ticker"
+            android:text="@{ticker.ticker}"
+            style="@style/ticker_title"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_green_light"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:text="@{Double.toString(ticker.last_price)}"
+            style="@style/ticker_title"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_green_light"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/text_change"
+            android:text="@{Double.toString(ticker.change)}"
+            style="@style/ticker_title"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_green_light"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/text_volume"
+            android:text="@{Integer.toString(ticker.volume)}"
+            style="@style/ticker_title"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_green_light"
+            android:gravity="start" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
