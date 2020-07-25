@@ -12,7 +12,7 @@ import com.doitnowcompany.usstockscanner.db.entity.TickerEntity
 
 
 class TickerListAdapter internal constructor(
-    context: Context
+    context: Context?, val onClickListener: OnClickListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val TYPE_HEADER = 0
@@ -27,6 +27,9 @@ class TickerListAdapter internal constructor(
 
     inner class HeaderViewHolder(headerView: View) : RecyclerView.ViewHolder(headerView)
 
+    /**
+     * Create new [RecyclerView] item views (invoked by the layout manager)
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         when (viewType) {
             TYPE_ITEM -> {
@@ -46,12 +49,20 @@ class TickerListAdapter internal constructor(
         }
     }
 
+    /**
+     * Replaces the contents of a view (invoked by the layout manager)
+     */
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         if (holder is TickerViewHolder) {
-
             val current = tickers[position]
             holder.recyclerViewItemBinding.ticker = current
+            // This is important, because it forces the data binding to execute immediately,
+            // which allows the RecyclerView to make the correct view size measurements
+            //holder.recyclerViewItemBinding.executePendingBindings()
+            holder.itemView.setOnClickListener{
+                onClickListener.onClick(current)
+            }
         }
 
     }
@@ -67,6 +78,14 @@ class TickerListAdapter internal constructor(
     }
 
     override fun getItemCount() = tickers.size
+
+    /**custom listener that handles clicks on [RecyclerView] items. Passes the [TickerEntity]
+     *associated with the current item to the [onClick] function.
+     *@param clickListener lambda that will be called with the current [TickerEntity]
+     */
+    class OnClickListener(val clickListener: (tickerEntity:TickerEntity) -> Unit) {
+        fun onClick(tickerEntity:TickerEntity) = clickListener(tickerEntity)
+    }
 
 }
 
