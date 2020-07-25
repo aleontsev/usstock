@@ -3,6 +3,7 @@ package com.doitnowcompany.usstockscanner.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.doitnowcompany.usstockscanner.TickerRepository
 import com.doitnowcompany.usstockscanner.db.AppDatabase
@@ -13,12 +14,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class TickerListViewModel (application: Application) : AndroidViewModel(application) {
+class ScanListViewModel (application: Application) : AndroidViewModel(application) {
 
     // Reference to the repository
     private val repository: TickerRepository
     // Updated list of tickers when they change
     val allTickers: LiveData<List<TickerEntity>>
+
+    private val _selectedTicker = MutableLiveData<TickerEntity>()
+
+    val selectedTicker: LiveData<TickerEntity>
+        get() = _selectedTicker
 
     init{
         // Getting reference to the TickerDao from AppDatabase to construct
@@ -38,5 +44,14 @@ class TickerListViewModel (application: Application) : AndroidViewModel(applicat
         repository.refreshTickers()
     }
 
+    //when list item is clicked we are setting the _selectedTicker
+    fun displayTickerChart(tickerEntity: TickerEntity){
+        _selectedTicker.value = tickerEntity
+    }
+
+    //after the navigation has taken place, we are setting _selectedTicker to null
+    fun displayTickerChartComplete(){
+        _selectedTicker.value = null
+    }
 
 }
