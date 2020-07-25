@@ -1,4 +1,4 @@
-package com.doitnowcompany.usstockscanner.ui
+package com.doitnowcompany.usstockscanner.ui.chart
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.doitnowcompany.usstockscanner.R
 import com.doitnowcompany.usstockscanner.databinding.FragmentChartBinding
-import com.doitnowcompany.usstockscanner.viewmodel.ChartViewModel
-import com.doitnowcompany.usstockscanner.viewmodel.ChartViewModelFactory
+
 
 
 class ChartFragment : Fragment() {

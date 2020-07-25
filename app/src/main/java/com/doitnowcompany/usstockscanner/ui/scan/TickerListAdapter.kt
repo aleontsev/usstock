@@ -1,4 +1,4 @@
-package com.doitnowcompany.usstockscanner.ui
+package com.doitnowcompany.usstockscanner.ui.scan
 
 import android.content.Context
 import android.view.LayoutInflater

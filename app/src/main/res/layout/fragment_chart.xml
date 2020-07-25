@@ -5,13 +5,13 @@
     <data>
         <variable
             name="chartViewModel"
-            type="com.doitnowcompany.usstockscanner.viewmodel.ChartViewModel" />
+            type="com.doitnowcompany.usstockscanner.ui.chart.ChartViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.ChartFragment">
+        tools:context=".ui.chart.ChartFragment">
 
         <ImageView
             android:id="@+id/chart_image"

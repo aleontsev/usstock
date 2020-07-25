@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/scanFragment"
-        android:name="com.doitnowcompany.usstockscanner.ui.ScanFragment"
+        android:name="com.doitnowcompany.usstockscanner.ui.scan.ScanFragment"
         android:label="ScanFragment"
         tools:layout="@layout/fragment_scan">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/chartFragment"
-        android:name="com.doitnowcompany.usstockscanner.ui.ChartFragment"
+        android:name="com.doitnowcompany.usstockscanner.ui.chart.ChartFragment"
         android:label="ChartFragment"
         tools:layout="@layout/fragment_chart">
         <argument

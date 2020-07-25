@@ -1,4 +1,4 @@
-package com.doitnowcompany.usstockscanner.ui
+package com.doitnowcompany.usstockscanner.ui.scan
 
 
 import android.os.Bundle
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.doitnowcompany.usstockscanner.R
 import com.doitnowcompany.usstockscanner.databinding.FragmentScanBinding
-import com.doitnowcompany.usstockscanner.viewmodel.ScanListViewModel
+
 
 
 class ScanFragment : Fragment() {
@@ -47,11 +47,12 @@ class ScanFragment : Fragment() {
 
         // Sets the adapter of the RecyclerView with clickHandler lambda that
         // tells the viewModel when our property is clicked
-        val adapter = TickerListAdapter(
-            context,
-            TickerListAdapter.OnClickListener {
-                scanViewModel.displayTickerChart(it)
-            })
+        val adapter =
+            TickerListAdapter(
+                context,
+                TickerListAdapter.OnClickListener {
+                    scanViewModel.displayTickerChart(it)
+                })
 
         // Observe the selectedTicker LiveData and Navigate when it isn't null
         // After navigating, call displayTickerChartComplete() so that the ViewModel is ready
