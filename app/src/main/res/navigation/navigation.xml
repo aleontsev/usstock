@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/scanFragment"
-        android:name="com.doitnowcompany.usstockscanner.ui.ScanFragment"
-        android:label="ScanFragment"
+        android:name="com.doitnowcompany.usstockscanner.ui.scan.ScanFragment"
+        android:label="@string/scanFragment_label"
         tools:layout="@layout/fragment_scan">
         <action
             android:id="@+id/action_scanFragment_to_chartFragment"
@@ -16,8 +16,8 @@
     </fragment>
     <fragment
         android:id="@+id/chartFragment"
-        android:name="com.doitnowcompany.usstockscanner.ui.ChartFragment"
-        android:label="ChartFragment"
+        android:name="com.doitnowcompany.usstockscanner.ui.chart.ChartFragment"
+        android:label="@string/chartFragment_label"
         tools:layout="@layout/fragment_chart">
         <argument
             android:name="selectedTicker"

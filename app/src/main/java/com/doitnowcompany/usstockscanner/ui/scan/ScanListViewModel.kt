@@ -1,4 +1,4 @@
-package com.doitnowcompany.usstockscanner.viewmodel
+package com.doitnowcompany.usstockscanner.ui.scan
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
