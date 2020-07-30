@@ -2,4 +2,7 @@
 <resources>
     <dimen name="text_size">18sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="horizontal_margin">8dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
+    <dimen name="image_header_height">192dp</dimen>
 </resources>

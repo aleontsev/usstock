@@ -16,6 +16,7 @@ android {
         applicationId "com.doitnowcompany.usstockscanner"
         minSdkVersion 19
         targetSdkVersion 29
+        vectorDrawables.useSupportLibrary = true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

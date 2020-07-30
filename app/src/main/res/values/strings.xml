@@ -19,4 +19,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chartFragment_label">Chart</string>
     <string name="scanFragment_label">Top Gainers</string>
+    <string name="about_text">This is Stock Scanner. It shows top %percent gainers</string>
+    <string name="AboutAppTitle">About</string>
+    <string name="fragment_about_app_title">About</string>
 </resources>
