@@ -23,4 +23,9 @@
             android:name="selectedTicker"
             app:argType="com.doitnowcompany.usstockscanner.db.entity.TickerEntity" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.doitnowcompany.usstockscanner.ui.about.AboutAppFragment"
+        android:label="@string/fragment_about_app_title"
+        tools:layout="@layout/fragment_about_app" />
 </navigation>
