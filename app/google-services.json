@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "766567946996",
+    "firebase_url": "https://usstockscanner.firebaseio.com",
+    "project_id": "usstockscanner",
+    "storage_bucket": "usstockscanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766567946996:android:fce9451373e1a2afaedca1",
+        "android_client_info": {
+          "package_name": "com.doitnowcompany.usstockscanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766567946996-0g16rpc6qnaiiqscs5jl5ihr703kcoh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLA_mGfNpnzp5qakVEFcn0NkC8EdKbPa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766567946996-0g16rpc6qnaiiqscs5jl5ihr703kcoh2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
