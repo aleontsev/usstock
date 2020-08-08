@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">usstockscanner</string>
+    <string name="app_name">US Stock Scanner</string>
     <string name="scan_button">Scan</string>
     <string name="ticker_title">Ticker</string>
     <string name="text_header_ticker">Ticker</string>
@@ -19,7 +19,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chartFragment_label">Chart</string>
     <string name="scanFragment_label">Top Gainers</string>
-    <string name="about_text">This is Stock Scanner. It shows top %percent gainers</string>
+    <string name="about_text">
+        This is US Stock Scanner.
+        \nIt shows top %percent gainers.
+        \nParameters for being on a list:
+        \n*Previous day close price>1$
+        \n*Current price>1$
+        \n*Day Volume>20k
+        \n*Market Cap>200mln$ </string>
     <string name="AboutAppTitle">About</string>
     <string name="fragment_about_app_title">About</string>
 </resources>
