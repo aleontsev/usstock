@@ -69,6 +69,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-config-ktx:19.2.0'
     implementation 'com.google.firebase:firebase-analytics-ktx:17.4.4'
 
+    //AdMob
+    implementation 'com.google.android.gms:play-services-ads:19.3.0'
+
+
 
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"

@@ -12,11 +12,6 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chartFragment_label">Chart</string>
     <string name="scanFragment_label">Top Gainers</string>
     <string name="about_text">
@@ -29,4 +24,7 @@
         \n*Market Cap>200mln$ </string>
     <string name="AboutAppTitle">About</string>
     <string name="fragment_about_app_title">About</string>
+    <string name="admob_application_id">ca-app-pub-8860146573198389~5769799520</string>
+    <string name="admob_application_block">ca-app-pub-8860146573198389/7426512034</string>
+    <string name="admob_application_block_test">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
