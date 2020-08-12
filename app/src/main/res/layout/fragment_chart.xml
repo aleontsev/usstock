@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/holo_green_light"
-        app:layout_constraintEnd_toStartOf="@+id/adView_container"
         app:layout_constraintStart_toStartOf="@+id/adView_container"
         tools:context=".ui.chart.ChartFragment">
 
@@ -21,13 +20,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:padding="2dp"
             android:scaleType="centerCrop"
             app:chartUrl="@{chartViewModel.chartURL}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adView_container"
             tools:ignore="ContentDescription"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -35,11 +33,11 @@
             android:id="@+id/adView_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#666666"
+            app:layout_constraintBottom_toTopOf="@id/chart_image"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:background="#666666">
-        </FrameLayout>
+            app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
