@@ -9,9 +9,6 @@ import com.doitnowcompany.usstockscanner.TickerRepository
 import com.doitnowcompany.usstockscanner.db.AppDatabase
 import com.doitnowcompany.usstockscanner.db.entity.TickerEntity
 import com.doitnowcompany.usstockscanner.network.IEXApi
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class ScanListViewModel (application: Application) : AndroidViewModel(application) {
@@ -40,8 +37,9 @@ class ScanListViewModel (application: Application) : AndroidViewModel(applicatio
     }
 
     //refreshing tickers from network
-    fun refreshTickers() = viewModelScope.launch {
-        repository.refreshTickers()
+    fun refreshTickers(direction: Boolean) = viewModelScope.launch {
+        //direction means to show gainers or losers in the list
+        repository.refreshTickers(direction)
     }
 
     //when list item is clicked we are setting the _selectedTicker

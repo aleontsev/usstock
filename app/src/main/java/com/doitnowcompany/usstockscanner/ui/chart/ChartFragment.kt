@@ -25,6 +25,7 @@ class ChartFragment : Fragment() {
         val binding: FragmentChartBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_chart, container, false)
         binding.lifecycleOwner = this
+        //getting ticker for making Stock Chart
         val selectedTicker = ChartFragmentArgs.fromBundle(
             requireArguments()
         ).selectedTicker

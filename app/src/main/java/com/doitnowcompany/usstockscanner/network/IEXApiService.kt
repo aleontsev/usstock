@@ -1,25 +1,17 @@
 package com.doitnowcompany.usstockscanner.network
 
 
+import com.doitnowcompany.usstockscanner.App
+import com.doitnowcompany.usstockscanner.R
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.Deferred
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
-private const val BASE_URL = "https://cloud.iexapis.com"
-//private const val BASE_URL = "https://sandbox.iexapis.com/"
-private const val API_TOKEN = "pk_e6835a488d48412481f561bbe124cb2a"
-//production api token
-//secret sk_f53a3c46f7c74ce3bd63b26bfb18533b
-//publishable pk_e6835a488d48412481f561bbe124cb2a
-
-//test api token
-//publishable Tpk_247ae2498629453786fcc3729f768212
-//secret Tsk_a1853bb7918c46738cde0ca271e6c739
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -28,13 +20,21 @@ private val moshi = Moshi.Builder()
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
-    .baseUrl(BASE_URL)
+    .baseUrl(App.context.resources.getString(R.string.base_url_production))
     .build()
 
 interface IEXApiService {
-    @GET("stable/stock/market/list/gainers?listLimit=10&token=$API_TOKEN")
-    fun getTickers():
+
+    //Getting gainers to the list
+    @GET("stable/stock/market/list/gainers")
+    fun getTickersGainersAsync(@Query("token") token:String):
             Deferred<List<TickerData>>
+
+    //Getting losers to the list
+    @GET("/stable/stock/market/list/losers")
+    fun getTickersLosersAsync(@Query("token") token:String):
+            Deferred<List<TickerData>>
+
 }
 
 /**

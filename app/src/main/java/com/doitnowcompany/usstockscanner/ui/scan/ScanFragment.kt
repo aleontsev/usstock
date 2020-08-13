@@ -26,7 +26,6 @@ class ScanFragment : Fragment() {
      */
     private val scanViewModel by lazy { ViewModelProvider(this).get(ScanListViewModel::class.java) }
 
-
     /**
      * Inflates the layout with Data Binding, sets its lifecycle owner to the ScanFragment
      * to enable Data Binding to observe LiveData, and sets up the RecyclerView with an adapter.
@@ -78,6 +77,7 @@ class ScanFragment : Fragment() {
             recyclerView.context,
             LinearLayoutManager(context).orientation
         )
+        //Setting divider color for the Recycler View
         ContextCompat.getDrawable(requireContext(), R.drawable.vertical_divider_itemlist)?.let {
             mDividerItemDecoration.setDrawable(
                 it
