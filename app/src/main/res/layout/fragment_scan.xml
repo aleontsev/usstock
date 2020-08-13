@@ -24,7 +24,7 @@
             android:layout_marginRight="0dp"
             android:background="@android:color/holo_green_light"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/scan"
+            app:layout_constraintBottom_toTopOf="@id/gainers"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -33,18 +33,27 @@
             tools:listitem="@layout/recyclerview_item" />
 
         <Button
-            android:id="@+id/scan"
+            android:id="@+id/gainers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="707dp"
-            android:text="@string/scan_button"
-            android:onClick="@{()->viewmodel.refreshTickers()}"
+            android:onClick="@{()->viewmodel.refreshTickers(true)}"
+            android:text="@string/gainers_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toEndOf="@id/losers"
+            app:layout_constraintTop_toBottomOf="@id/recyclerview" />
+
+        <Button
+            android:id="@+id/losers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->viewmodel.refreshTickers(false)}"
+            android:text="@string/losers_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gainers"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/recyclerview"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@id/recyclerview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

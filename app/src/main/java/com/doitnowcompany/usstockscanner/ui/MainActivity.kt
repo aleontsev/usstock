@@ -10,20 +10,24 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.doitnowcompany.usstockscanner.R
 import com.doitnowcompany.usstockscanner.databinding.ActivityMainBinding
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.google.firebase.remoteconfig.ktx.get
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var appBarConfiguration : AppBarConfiguration
+    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var remoteConfig: FirebaseRemoteConfig
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        //Admob initialization
+        MobileAds.initialize(this)
+
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         drawerLayout = binding.drawerLayout
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
@@ -45,8 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
-        return  NavigationUI.navigateUp(navController, appBarConfiguration )
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
-
 
 }
