@@ -1,5 +1,4 @@
 # usstock
-# US Stock Scanner getting current Gainers and Losers on Us Stock Market.
 ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/15144425/91211970-40c36500-e718-11ea-9811-418b8c232ac5.gif)
 ![device-2020-08-25-212523](https://user-images.githubusercontent.com/15144425/91213277-04910400-e71a-11ea-92e5-dd281dce3f68.png)
 ![device-2020-08-25-212544](https://user-images.githubusercontent.com/15144425/91213289-08bd2180-e71a-11ea-8ce1-0dca59d00963.png)
